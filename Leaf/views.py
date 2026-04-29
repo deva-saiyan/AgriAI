@@ -18,7 +18,7 @@ _class_names = None
 def get_model():
     global _cnn_model
     if _cnn_model is None:
-        model_path = os.path.join(settings.BASE_DIR, "Leaf", "Data", "leaf.keras")
+        model_path = os.path.join(settings.BASE_DIR, "Leaf", "Data", "leafs.keras")
         _cnn_model = tf.keras.models.load_model(model_path)
     return _cnn_model
 
