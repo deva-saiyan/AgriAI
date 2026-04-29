@@ -1,0 +1,65 @@
+/* Background */
+.crop-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+}
+
+/* Card */
+.crop-card {
+  border-radius: 18px;
+  border: none;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Header */
+.card-header {
+  background: linear-gradient(135deg, #1b5e20, #4caf50);
+  padding: 20px;
+}
+
+/* Section title */
+.section-title {
+  color: #2e7d32;
+  font-weight: bold;
+  border-left: 5px solid #66bb6a;
+  padding-left: 10px;
+}
+
+/* Inputs */
+.input-anim {
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.input-anim:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 10px rgba(46,125,50,0.3);
+  transform: scale(1.02);
+}
+
+/* Button */
+.btn-predict {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn-predict:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(46,125,50,0.5);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,42 @@
+
+.users-bg {
+    background: url("../img/bg1.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* SEARCH BAR */
+.search-box {
+    border-radius: 25px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* USER CARD */
+.user-card {
+    border-radius: 20px;
+    transition: 0.3s ease;
+    border: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+.user-card:hover {
+    transform: translateY(-10px);
+}
+
+/* USER IMAGE */
+.user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* BUTTONS */
+.btn {
+    border-radius: 20px;
+    font-size: 13px;
+}

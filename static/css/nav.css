@@ -1,0 +1,75 @@
+/* Navbar background glass effect */
+.custom-navbar {
+  background: rgba(20, 60, 40, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Brand */
+.brand {
+  font-weight: bold;
+  color: #fff !important;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Nav links */
+.nav-anim {
+  color: #fff !important;
+  margin: 0 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover animation underline */
+.nav-anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #00ff99;
+  transition: 0.3s;
+}
+
+.nav-anim:hover::after {
+  width: 100%;
+}
+
+/* Hover scale effect */
+.nav-anim:hover {
+  transform: translateY(-2px);
+  color: #00ff99 !important;
+}
+
+/* Active link */
+.nav-anim.active {
+  color: #00ff99 !important;
+}
+
+/* Logout highlight */
+.logout {
+  color: #ff5c5c !important;
+}
+
+.logout:hover {
+  color: #ff1f1f !important;
+}
+
+/* Mobile menu animation */
+.navbar-collapse {
+  animation: fadeDown 0.4s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

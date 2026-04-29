@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/users.css' %}">
+
+<div class="users-bg">
+
+    <div class="container py-5">
+
+        <!-- HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="text-primary">👥 Registered Formers</h2>
+
+            <a href="{% url 'Former:new_user' %}" class="btn btn-success">
+                ➕ Add New User
+            </a>
+
+        </div>
+
+        <!-- SEARCH -->
+        <div class="mb-4">
+
+            <form method="GET" action="{% url 'Former:users' %}">
+
+                <input type="text" name="q" value="{{ query }}" class="form-control search-box"
+                    placeholder="🔍 Search by name, place, phone...">
+
+            </form>
+
+        </div>
+
+        <!-- CARDS -->
+        <div class="row" id="userContainer">
+
+            {% for user in register_data %}
+
+            <div class="col-md-4 mb-4 user-card-item">
+
+                <div class="card user-card shadow-lg">
+
+                    <div class="card-body text-center">
+
+                        <!-- IMAGE -->
+                        {% if user.photo %}
+                        <img src="{{ user.photo.url }}" class="user-img mb-3">
+                        {% else %}
+                        <img src="{% static 'img/user.png' %}" class="user-img mb-3">
+                        {% endif %}
+
+                        <!-- DETAILS -->
+                        <h5 class="card-title user-name">{{ user.name }}</h5>
+                        <p class="text-muted user-email">{{ user.email }}</p>
+                        <p class="small user-district">📍 {{ user.district }}</p>
+
+                        <!-- BUTTONS -->
+                        <div class="d-flex justify-content-between mt-3">
+
+                            <a href="{% url 'Former:user_view' user.id %}" class="btn btn-sm btn-info">
+                                👁 View
+                            </a>
+
+                            <a href="{% url 'Former:update_user' user.id %}" class="btn btn-sm btn-warning">
+                                ✏ Edit
+                            </a>
+
+                            <a href="{% url 'Former:delete_user' user.id %}" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Are you sure you want to delete this user?');">
+                                🗑 Delete
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+<!-- SEARCH JS -->
+<script>
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        let value = this.value.toLowerCase();
+        let cards = document.querySelectorAll(".user-card-item");
+
+        cards.forEach(card => {
+            let text = card.innerText.toLowerCase();
+            card.style.display = text.includes(value) ? "block" : "none";
+        });
+    });
+</script>
+
+{% endblock %}

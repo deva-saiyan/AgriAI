@@ -1,0 +1,52 @@
+
+/* BACKGROUND */
+.edit-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* CARD */
+.edit-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    color: white;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00ffcc;
+}
+
+/* INPUTS */
+.form-control {
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+}
+
+/* SAVE BUTTON */
+.btn-save {
+    background: #00ffcc;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.btn-save:hover {
+    background: #00c9a7;
+}
+
+/* CANCEL */
+.btn-cancel {
+    background: transparent;
+    border: 1px solid #fff;
+    color: white;
+    border-radius: 20px;
+}

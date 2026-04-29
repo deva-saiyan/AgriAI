@@ -1,0 +1,140 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/crop_form.css' %}">
+
+<div class="crop-bg py-5">
+
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-md-10">
+
+        <div class="card crop-card shadow-lg">
+
+          <!-- HEADER -->
+          <div class="card-header text-center text-white">
+            <h3>🌾 Crop Prediction</h3>
+            <p class="small mb-0">Enter accurate soil & environmental data</p>
+          </div>
+
+          <div class="card-body p-4">
+
+            <form method="POST">
+              {% csrf_token %}
+
+              <!-- ================= USER INFO ================= -->
+              <h5 class="section-title">👤 Farmer Info</h5>
+
+              <div class="row">
+
+                <div class="col-md-4 mb-3">
+                  <label>Name</label>
+                  <input type="text" name="name" class="form-control input-anim" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>District</label>
+                  <select name="district" class="form-select input-anim" required>
+                    <option value="">Select District</option>
+                    {% for val, label in TAMILNADU_DISTRICTS %}
+                      <option value="{{ val }}">{{ label }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Place</label>
+                  <input type="text" name="place" class="form-control input-anim" required>
+                </div>
+
+              </div>
+
+              <!-- ================= SOIL NUTRIENTS ================= -->
+              <h5 class="section-title mt-4">🌱 Soil Nutrients</h5>
+
+              <div class="row">
+
+                <div class="col-md-4 mb-3">
+                  <label>Nitrogen</label>
+                  <input type="number" name="nitrogen" class="form-control input-anim" required min="0">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Phosphorus</label>
+                  <input type="number" name="phosphorus" class="form-control input-anim" required min="0">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Potassium</label>
+                  <input type="number" name="potassium" class="form-control input-anim" required min="0">
+                </div>
+
+              </div>
+
+              <!-- ================= ENVIRONMENT ================= -->
+              <h5 class="section-title mt-4">🌦 Environment</h5>
+
+              <div class="row">
+
+                <div class="col-md-4 mb-3">
+                  <label>Temperature (°C)</label>
+                  <input type="number" name="temperature" class="form-control input-anim" required step="0.1">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Humidity (%)</label>
+                  <input type="number" name="humidity" class="form-control input-anim" required min="0" max="100">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Rainfall (mm)</label>
+                  <input type="number" name="rainfall" class="form-control input-anim" required step="0.1">
+                </div>
+
+              </div>
+
+              <!-- ================= SOIL PROPERTIES ================= -->
+              <h5 class="section-title mt-4">🧪 Soil Properties</h5>
+
+              <div class="row">
+
+                <div class="col-md-4 mb-3">
+                  <label>Soil Moisture</label>
+                  <input type="number" name="soil_moisture" class="form-control input-anim" required step="0.1">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>Soil pH</label>
+                  <input type="number" name="soil_ph" class="form-control input-anim" required step="0.01" min="0" max="14">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label>CEC</label>
+                  <input type="number" name="cation_exchange_capacity" class="form-control input-anim" required step="0.1">
+                </div>
+
+              </div>
+
+              <!-- ================= BUTTON ================= -->
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-predict btn-lg">
+                  Predict Crop 🌱
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

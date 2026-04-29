@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/leaf_result.css' %}">
+
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <div class="card shadow-lg p-4 text-center">
+
+        <h2 class="text-success">🌿 Prediction Result</h2>
+
+        <!-- MESSAGE -->
+        <div class="alert alert-info mt-3">
+          {{ message }}
+        </div>
+
+        <!-- IMAGE -->
+        <img src="{{ image_url }}" class="img-fluid rounded shadow" width="300">
+
+        <!-- RESULT -->
+        <h3 class="mt-3">
+          Disease: <span class="text-danger">{{ prediction }}</span>
+        </h3>
+
+        <p>
+          Confidence: <b>{{ confidence }}%</b>
+        </p>
+
+        <!-- INFO BOX -->
+        <div class="mt-3 p-3 bg-light rounded">
+          <p><b>Name:</b> {{ name }}</p>
+          <p><b>Plant Type:</b> {{ plant_type }}</p>
+          <p><b>Location:</b> {{ location }}, {{ district }}</p>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="mt-4">
+
+          <a href="{% url 'Leaf:leaf_prediction' %}" class="btn btn-outline-success">
+            🔁 Try Again
+          </a>
+
+          <a href="{% url 'Home:home' %}" class="btn btn-success">
+            🏠 Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

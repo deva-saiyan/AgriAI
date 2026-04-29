@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/view_user.css' %}">
+
+<div class="profile-body">
+
+<div class="container d-flex justify-content-center align-items-center py-5">
+
+  <div class="profile-card text-center">
+
+    <!-- PROFILE IMAGE -->
+     <div class="i_max">
+    {% if user.photo %}
+        <img src="{{ user.photo.url }}" class="profile-img">
+    {% else %}
+        <img src="{% static 'img/user.png' %}" class="profile-img">
+    {% endif %}
+    </div>
+
+    <!-- DETAILS -->
+    <h3 class="name">{{ user.name }}</h3>
+
+    <div class="info">
+      <p>📞 {{ user.phone }}</p>
+      <p>📍 {{ user.place }}</p>
+      <p>🏙 {{ user.district }}</p>
+    </div>
+
+    <!-- BACK -->
+    <a href="{% url 'Former:users' %}" class="back-btn">⬅ Back</a>
+
+  </div>
+
+</div>
+
+</div>
+
+{% endblock %}

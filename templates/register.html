@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<div class="register-bg d-flex align-items-center">
+
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-md-7">
+
+        <div class="card register-card shadow-lg">
+
+          <div class="card-header text-center text-white">
+            <h3>🌿 Agrimind AI Registration</h3>
+            <p class="small">Start your smart farming journey</p>
+          </div>
+
+          <div class="card-body p-4">
+
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <!-- Messages -->
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+
+              <!-- Name -->
+              <div class="mb-3">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control input-anim" required>
+              </div>
+
+              <!-- Photo -->
+              <div class="mb-3">
+                <label>Profile Photo</label>
+                <input type="file" name="photo" class="form-control input-anim">
+              </div>
+
+              <!-- Gender -->
+              <div class="mb-3">
+                <label>Gender</label>
+                <select name="gender" class="form-select input-anim">
+                  <option value="">Select</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Others</option>
+                </select>
+              </div>
+
+              <!-- DOB -->
+              <div class="mb-3">
+                <label>Date of Birth</label>
+                <input type="date" name="date_of_birth" class="form-control input-anim" required>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control input-anim" required>
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-3">
+                <label>Phone</label>
+                <input type="text" name="phone" class="form-control input-anim" required>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control input-anim" required>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control input-anim" required>
+              </div>
+
+              <!-- Button -->
+              <div class="d-grid mt-3">
+                <button class="btn btn-glow btn-lg">Register 🌱</button>
+              </div>
+
+              <div class="text-center mt-3">
+                <small>
+                  Already have an account?
+                  <a href="{% url 'Former:login' %}">Login</a>
+                </small>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% include 'footer.html' %}
+{% endblock %}

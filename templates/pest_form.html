@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/leaf.css' %}">
+
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-7">
+
+      <div class="card shadow-lg p-4">
+
+        <h3 class="text-center text-success">🌿 Leaf Disease Prediction</h3>
+        <p class="text-center text-muted">Upload plant leaf image for AI analysis</p>
+
+        <form method="POST" action="{% url 'pest_prediction' %}" enctype="multipart/form-data"></form>
+        
+          {% csrf_token %}
+
+          <!-- NAME -->
+          <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+
+          <!-- DISTRICT -->
+          <div class="mb-3">
+            <label>District</label>
+            <input type="text" name="district" class="form-control" required>
+          </div>
+
+          <!-- LOCATION -->
+          <div class="mb-3">
+            <label>Location</label>
+            <input type="text" name="location" class="form-control" required>
+          </div>
+
+          <!-- PLANT TYPE -->
+          <div class="mb-3">
+            <label>Plant Type</label>
+            <select name="plant_type" class="form-select" required>
+              <option value="">Select Plant</option>
+              <option>Apple</option>
+              <option>Corn</option>
+              <option>Grape</option>
+              <option>Tomato</option>
+              <option>Cherry</option>
+              <option>Peach</option>
+              <option>Pepper</option>
+              <option>Potato</option>
+              <option>Strawberry</option>
+              <option>Orange</option>
+              <option>Raspberry</option>
+              <option>Soybean_healthy</option>
+              <option>Squash</option>
+            </select>
+          </div>
+
+          <!-- IMAGE -->
+          <div class="mb-3">
+            <label>Upload Leaf Image</label>
+            <input type="file" name="image" class="form-control" required>
+          </div>
+
+          <!-- BUTTON -->
+          <button type="submit" class="btn btn-success w-100">
+            🌿 Predict Disease
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

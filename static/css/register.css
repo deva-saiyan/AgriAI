@@ -1,0 +1,72 @@
+/* Background */
+.register-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+  animation: bgMove 10s infinite alternate;
+}
+
+/* Card Glass Effect */
+.register-card {
+  border-radius: 18px;
+  border: none;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 1s ease-in-out;
+  overflow: hidden;
+}
+
+/* Header */
+.card-header {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+  padding: 20px;
+}
+
+/* Inputs */
+.input-anim {
+  border-radius: 10px;
+  transition: 0.3s;
+  padding: 10px;
+}
+
+.input-anim:focus {
+  border-color: #00c853;
+  box-shadow: 0 0 12px rgba(0, 200, 83, 0.4);
+  transform: scale(1.02);
+}
+
+/* Button glow */
+.btn-glow {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 200, 83, 0.4);
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.6);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

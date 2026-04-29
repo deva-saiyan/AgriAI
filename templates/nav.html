@@ -1,0 +1,70 @@
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriMind AI 🤖</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand brand" href="{% url 'Home:home' %}">
+      <span>AgriMind AI</span> 🌿
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fa fa-bars text-white"></i>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link nav-anim active" href="{% url 'Home:home' %}">
+            <i class="fa fa-home"></i> Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-anim" href="{% url 'Home:about' %}">
+            <i class="fa fa-leaf"></i> About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-anim" href="{% url 'Home:contact' %}">
+            <i class="fa fa-phone"></i> Contact
+          </a>
+        </li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link nav-anim logout" href="{% url 'Former:logout' %}">
+            <i class="fa fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="{% static 'js/nav.js' %}"></script>
+
+</body>

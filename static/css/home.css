@@ -1,0 +1,76 @@
+/* HERO */
+.hero-section {
+  height: 92vh;
+  background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,50,30,0.75)),
+              url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") center/cover no-repeat;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 120px rgba(0,0,0,0.9);
+}
+
+/* Animations */
+.animate-title {
+  animation: fadeDown 1s ease-in-out;
+}
+
+.animate-subtitle {
+  animation: fadeUp 1.2s ease-in-out;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* FEATURES BACKGROUND */
+.features-section {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* Title glow */
+.title-glow {
+  color: #00ff99;
+  text-shadow: 0 0 10px rgba(0,255,153,0.4);
+}
+
+/* Feature Cards */
+.feature-card {
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.4s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Colors */
+.card-green {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.card-red {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.card-blue {
+  background: linear-gradient(135deg, #396afc, #2948ff);
+}
+
+/* Hover effect */
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+.footer-dark {
+  background: #111;
+  color: #aaa;
+}
+
+/* Buttons smooth */
+.smooth-btn {
+  transition: 0.3s;
+}
+
+.smooth-btn:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/user_edit.css' %}">
+
+<div class="edit-bg">
+
+<div class="container py-5 d-flex justify-content-center">
+
+  <div class="edit-card shadow-lg">
+
+    <h3 class="text-center mb-4">✏ Edit User</h3>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <!-- IMAGE PREVIEW -->
+      <div class="text-center mb-3">
+
+        {% if user.photo %}
+          <img src="{{ user.photo.url }}" class="profile-img">
+        {% else %}
+          <img src="{% static 'img/user.png' %}" class="profile-img">
+        {% endif %}
+
+      </div>
+
+      <!-- NAME -->
+      <label>Name</label>
+      <input type="text" name="name" value="{{ user.name }}" class="form-control mb-2" required>
+
+      <!-- PHONE -->
+      <label>Phone</label>
+      <input type="text" name="phone" value="{{ user.phone }}" class="form-control mb-2">
+
+      <!-- PLACE -->
+      <label>Place</label>
+      <input type="text" name="place" value="{{ user.place }}" class="form-control mb-2">
+
+      <!-- DISTRICT -->
+      <label>District</label>
+      <input type="text" name="district" value="{{ user.district }}" class="form-control mb-2">
+
+      <!-- IMAGE -->
+      <label>Change Photo</label>
+      <input type="file" name="photo" class="form-control mb-3">
+
+      <!-- BUTTONS -->
+      <button type="submit" class="btn btn-save w-100">💾 Save Changes</button>
+
+      <a href="{% url 'Former:users' %}" class="btn btn-cancel w-100 mt-2">
+        ⬅ Cancel
+      </a>
+
+    </form>
+
+  </div>
+
+</div>
+
+</div>
+
+{% endblock %}
