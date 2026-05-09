@@ -1,0 +1,586 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- CSS -->
+<link rel="stylesheet" href="{% static 'css/crop_details.css' %}">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<section class="project-wrapper container-fluid">
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero-section">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                AgriMind AI
+            </h1>
+
+            <h3 class="hero-tagline">
+                Smart Crop Suggestion System
+            </h3>
+
+            <p class="hero-subtitle">
+                Intelligent agriculture platform using Artificial Intelligence,
+                Machine Learning and Smart Farming Technologies for accurate crop prediction.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#overview" class="hero-btn">
+                    <i class="fa-solid fa-seedling"></i>
+                    Explore Project
+                </a>
+
+                <a href="#algorithms" class="hero-btn second-btn">
+                    <i class="fa-solid fa-chart-line"></i>
+                    View Accuracy
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= OVERVIEW ================= -->
+
+    <section id="overview" class="content-section">
+
+        <div class="section-heading">
+            <span>Project Information</span>
+            <h1>Project Overview</h1>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ABSTRACT -->
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card blue-gradient">
+
+                    <div class="card-top">
+
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <h2>Abstract</h2>
+
+                    </div>
+
+                    <p>
+                        AgriMind AI is a smart agriculture recommendation system
+                        developed using Machine Learning algorithms for intelligent crop prediction.
+                        The system analyzes soil nutrients, humidity, rainfall,
+                        temperature and pH values to recommend the best crop for cultivation.
+                        ANN, Gradient Boosting and Hybrid Fusion Models are used
+                        to improve prediction performance and agricultural productivity.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- AIM -->
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card purple-gradient">
+
+                    <div class="card-top">
+
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+
+                        <h2>Project Aim</h2>
+
+                    </div>
+
+                    <ul class="custom-list">
+
+                        <li>Provide intelligent crop recommendations</li>
+
+                        <li>Improve agricultural productivity</li>
+
+                        <li>Reduce crop failure risk</li>
+
+                        <li>Support smart farming systems</li>
+
+                        <li>Enable data-driven farming decisions</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PROBLEM STATEMENT ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>Research Problem</span>
+            <h1>Problem Statement</h1>
+        </div>
+
+        <div class="problem-card animate-card">
+
+            <div class="problem-content">
+
+                <div class="problem-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <p>
+                    Traditional crop recommendation methods are mostly manual and
+                    dependent on farmer experience. Environmental variations,
+                    climate changes and improper crop selection reduce agricultural productivity.
+                    Farmers often face financial loss due to lack of scientific crop prediction systems.
+                    Therefore, an AI-based intelligent crop suggestion platform is required
+                    to improve farming accuracy and productivity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= EXISTING & PROPOSED ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>System Analysis</span>
+            <h1>Existing vs Proposed System</h1>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- EXISTING -->
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card red-gradient">
+
+                    <div class="system-header">
+
+                        <i class="fa-solid fa-circle-xmark"></i>
+
+                        <h2>Existing System</h2>
+
+                    </div>
+
+                    <ul class="custom-list">
+
+                        <li>Manual crop prediction methods</li>
+
+                        <li>Less prediction accuracy</li>
+
+                        <li>No intelligent analysis</li>
+
+                        <li>Time-consuming process</li>
+
+                        <li>Dependent on traditional experience</li>
+
+                        <li>No AI integration</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- PROPOSED -->
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card green-gradient">
+
+                    <div class="system-header">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <h2>Proposed System</h2>
+
+                    </div>
+
+                    <ul class="custom-list">
+
+                        <li>AI-powered crop recommendation</li>
+
+                        <li>Fusion Model prediction system</li>
+
+                        <li>95% prediction accuracy</li>
+
+                        <li>Real-time intelligent analysis</li>
+
+                        <li>Web-based smart farming platform</li>
+
+                        <li>Machine Learning integration</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DATASET ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>Training Dataset</span>
+            <h1>Dataset Information</h1>
+        </div>
+
+        <div class="dataset-card animate-card">
+
+            <div class="dataset-grid">
+
+                <div class="dataset-box">
+
+                    <h2>50K+</h2>
+
+                    <p>Dataset Records</p>
+
+                </div>
+
+                <div class="dataset-box">
+
+                    <h2>22</h2>
+
+                    <p>Unique Crops</p>
+
+                </div>
+
+                <div class="dataset-box">
+
+                    <h2>Kaggle</h2>
+
+                    <p>Dataset Source</p>
+
+                </div>
+
+                <div class="dataset-box">
+
+                    <h2>7+</h2>
+
+                    <p>Input Parameters</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ALGORITHMS ================= -->
+
+    <section id="algorithms" class="content-section">
+
+        <div class="section-heading">
+            <span>Machine Learning Models</span>
+            <h1>Algorithms & Accuracy</h1>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ANN -->
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle accuracy-one">
+                        92%
+                    </div>
+
+                    <h2>ANN</h2>
+
+                    <p>
+                        Artificial Neural Network learns complex agricultural patterns
+                        for intelligent crop recommendation.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- GRADIENT BOOST -->
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle accuracy-two">
+                        95%
+                    </div>
+
+                    <h2>Gradient Boosting</h2>
+
+                    <p>
+                        Ensemble learning algorithm that improves crop prediction
+                        accuracy and reduces model errors.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FUSION -->
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle accuracy-three">
+                        97%
+                    </div>
+
+                    <h2>Fusion Model</h2>
+
+                    <p>
+                        Hybrid combination of ANN and Gradient Boosting
+                        for improved stability and intelligent recommendation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CHART ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>Performance Evaluation</span>
+            <h1>Accuracy Comparison</h1>
+        </div>
+
+        <div class="chart-card animate-card">
+
+            <div class="bar-chart">
+
+                <div class="chart-item">
+
+                    <div class="chart-bar ann-bar"></div>
+
+                    <h3>ANN</h3>
+
+                    <p>92%</p>
+
+                </div>
+
+                <div class="chart-item">
+
+                    <div class="chart-bar gb-bar"></div>
+
+                    <h3>Gradient Boost</h3>
+
+                    <p>95%</p>
+
+                </div>
+
+                <div class="chart-item">
+
+                    <div class="chart-bar fusion-bar"></div>
+
+                    <h3>Fusion Model</h3>
+
+                    <p>97%</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>System Features</span>
+            <h1>Key Features</h1>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <h3>Smart Recommendation</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>AI Prediction</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-cloud-rain"></i>
+
+                <h3>Climate Analysis</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>High Accuracy</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <h3>Web Application</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>Precision Farming</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= NOVELTY ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>Research Contribution</span>
+            <h1>Project Novelty</h1>
+        </div>
+
+        <div class="glass-card animate-card novelty-card">
+
+            <ul class="custom-list">
+
+                <li>Hybrid Fusion Model Implementation</li>
+
+                <li>AI-Based Smart Crop Recommendation</li>
+
+                <li>Large Scale Agricultural Dataset</li>
+
+                <li>High Accuracy Intelligent Prediction</li>
+
+                <li>Web-Based Real-Time Recommendation</li>
+
+                <li>Precision Agriculture Support</li>
+
+                <li>Machine Learning Integrated Farming</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- ================= JOURNAL ================= -->
+
+    <section class="content-section">
+
+        <div class="section-heading">
+            <span>Research Publication</span>
+            <h1>Journal Paper Status</h1>
+        </div>
+
+        <div class="journal-card animate-card">
+
+            <h2 class="journal-title">
+                AgriMind AI: Intelligent Crop Suggestion System Using
+                Hybrid Machine Learning Techniques
+            </h2>
+
+            <div class="journal-grid">
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Paper Writing</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Experimental Results</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Plagiarism Verification</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h3>Review Process</h3>
+
+                    <p>Ongoing</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- JS -->
+<script src="{% static 'js/crop_details.js' %}"></script>
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

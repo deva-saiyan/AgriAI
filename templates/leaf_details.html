@@ -1,0 +1,458 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/leaf_details.css' %}">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<section class="leaf-wrapper container-fluid">
+
+    <!-- HERO -->
+
+    <section class="hero-section">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                Leaf Disease Detection
+            </h1>
+
+            <h3 class="hero-subtitle">
+                Deep Learning Based Smart Plant Disease Identification System
+            </h3>
+
+            <p class="hero-text">
+                Intelligent agricultural disease prediction platform using
+                CNN, MobileNetV3 and Fusion Deep Learning Models.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#overview" class="hero-btn">
+                    Explore Project
+                </a>
+
+                <a href="#algorithms" class="hero-btn second-btn">
+                    View Accuracy
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OVERVIEW -->
+
+    <section id="overview" class="content-section">
+
+        <div class="section-title">
+
+            <span>Project Details</span>
+
+            <h1>Project Overview</h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ABSTRACT -->
+
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card">
+
+                    <div class="card-header-custom">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <h2>Abstract</h2>
+
+                    </div>
+
+                    <p>
+                        Plant diseases reduce agricultural productivity and affect crop quality.
+                        This project uses Deep Learning and Computer Vision techniques
+                        to automatically detect plant leaf diseases using image analysis.
+                        CNN, MobileNetV3 Large and Fusion Models are used for accurate
+                        disease classification and real-time agricultural support.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- AIM -->
+
+            <div class="col-lg-6">
+
+                <div class="glass-card animate-card">
+
+                    <div class="card-header-custom">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                        <h2>Project Aim</h2>
+
+                    </div>
+
+                    <ul>
+
+                        <li>Detect plant diseases automatically</li>
+
+                        <li>Improve crop productivity</li>
+
+                        <li>Reduce agricultural loss</li>
+
+                        <li>Support smart farming systems</li>
+
+                        <li>Provide AI-based disease prediction</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROBLEM -->
+
+    <section class="content-section">
+
+        <div class="section-title">
+
+            <span>Research Problem</span>
+
+            <h1>Problem Statement</h1>
+
+        </div>
+
+        <div class="problem-card animate-card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <p>
+                Traditional plant disease identification methods are manual,
+                time-consuming and require expert agricultural knowledge.
+                Farmers struggle to identify diseases accurately which leads
+                to crop damage and productivity loss.
+                Therefore, an intelligent Deep Learning based disease
+                detection system is necessary.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- DATASET -->
+
+    <section class="content-section">
+
+        <div class="section-title">
+
+            <span>Dataset Information</span>
+
+            <h1>PlantVillage Dataset</h1>
+
+        </div>
+
+        <div class="dataset-grid">
+
+            <div class="dataset-box animate-card">
+
+                <h2>90K+</h2>
+
+                <p>Leaf Images</p>
+
+            </div>
+
+            <div class="dataset-box animate-card">
+
+                <h2>14</h2>
+
+                <p>Plant Types</p>
+
+            </div>
+
+            <div class="dataset-box animate-card">
+
+                <h2>38</h2>
+
+                <p>Disease Classes</p>
+
+            </div>
+
+            <div class="dataset-box animate-card">
+
+                <h2>Kaggle</h2>
+
+                <p>Dataset Source</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ALGORITHMS -->
+
+    <section id="algorithms" class="content-section">
+
+        <div class="section-title">
+
+            <span>Deep Learning Models</span>
+
+            <h1>Algorithms & Accuracy</h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- CNN -->
+
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle cnn">
+                        96%
+                    </div>
+
+                    <h2>Custom CNN</h2>
+
+                    <p>
+                        Convolutional Neural Network extracts deep image
+                        features for accurate disease classification.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- MOBILENET -->
+
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle mobile">
+                        98%
+                    </div>
+
+                    <h2>MobileNetV3 Large</h2>
+
+                    <p>
+                        Lightweight Deep Learning architecture for fast
+                        and efficient disease prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FUSION -->
+
+            <div class="col-lg-4">
+
+                <div class="algo-card animate-card">
+
+                    <div class="accuracy-circle fusion">
+                        99%
+                    </div>
+
+                    <h2>Fusion Model</h2>
+
+                    <p>
+                        Hybrid Deep Learning model combining CNN and
+                        MobileNetV3 for high accuracy prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GLOBAL AVERAGE POOLING -->
+
+    <section class="content-section">
+
+        <div class="section-title">
+
+            <span>Novel Deep Learning Layer</span>
+
+            <h1>GlobalAverage2D Pooling</h1>
+
+        </div>
+
+        <div class="glass-card animate-card">
+
+            <div class="card-header-custom">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h2>Novelty Implementation</h2>
+
+            </div>
+
+            <p>
+                The proposed model uses GlobalAverage2D Pooling Layer
+                instead of traditional fully connected layers to reduce
+                overfitting and improve feature generalization.
+                This technique reduces model parameters,
+                improves prediction efficiency and increases
+                classification performance in leaf disease detection.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="content-section">
+
+        <div class="section-title">
+
+            <span>System Features</span>
+
+            <h1>Key Features</h1>
+
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <h3>Disease Detection</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Image Prediction</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <h3>Deep Learning</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>99% Accuracy</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Real-Time Analysis</h3>
+
+            </div>
+
+            <div class="feature-box animate-card">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <h3>Web-Based System</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- JOURNAL -->
+
+    <section class="content-section">
+
+        <div class="section-title">
+
+            <span>Research Publication</span>
+
+            <h1>Journal Paper Status</h1>
+
+        </div>
+
+        <div class="journal-card animate-card">
+
+            <h2>
+                Deep Learning Based Plant Leaf Disease Detection
+                Using Fusion CNN Models
+            </h2>
+
+            <div class="journal-grid">
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Paper Writing</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Results</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h3>Evaluation</h3>
+
+                    <p>Completed</p>
+
+                </div>
+
+                <div class="journal-box">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h3>Review Process</h3>
+
+                    <p>Ongoing</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<script src="{% static 'js/leaf_details.js' %}"></script>
+{% include 'footer.html' %}
+{% endblock %}

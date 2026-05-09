@@ -2,6 +2,7 @@ import os
 import numpy as np
 import tensorflow as tf
 import traceback
+from PIL import Image
 
 from django.shortcuts import render
 from django.conf import settings
@@ -9,47 +10,55 @@ from .models import PestClass
 
 
 # ==============================
-# LAZY LOADERS
+# GLOBAL CACHE
 # ==============================
-_cnn_model = None
+_model = None
 _class_names = None
 
 
+# ==============================
+# LOAD MODEL
+# ==============================
 def get_model():
-    global _cnn_model
-    if _cnn_model is None:
-        model_path = os.path.join(settings.BASE_DIR, "Pest", "Data", "pest_2.keras")
-        _cnn_model = tf.keras.models.load_model(model_path)
-    return _cnn_model
+    global _model
+    if _model is None:
+        model_path = os.path.join(settings.BASE_DIR, "Pest", "Data", "f2.keras")
+        print("Loading model from:", model_path)
+        _model = tf.keras.models.load_model(model_path)
+    return _model
 
 
+# ==============================
+# LOAD CLASS NAMES (VALID DATASET)
+# ==============================
 def get_class_names():
     global _class_names
     if _class_names is None:
-        valid_path = os.path.join(settings.BASE_DIR, "Pest", "Data", "Valid")
-        valid_data = tf.keras.utils.image_dataset_from_directory(
-    valid_path,
-    label_mode="categorical",
-    image_size=(224, 224),   # 🔥 FIXED
-    batch_size=32,
-    shuffle=False
-)
-        _class_names = valid_data.class_names
+        valid_dir = os.path.join(settings.BASE_DIR, "Pest", "Data", "Valid")
+
+        # Read folder names directly (SAFE + FAST)
+        _class_names = sorted([
+            d for d in os.listdir(valid_dir)
+            if os.path.isdir(os.path.join(valid_dir, d))
+        ])
+
+        print("Loaded classes:", _class_names)
+
     return _class_names
 
 
 # ==============================
-# PREPROCESS
+# PREPROCESS IMAGE
 # ==============================
 def preprocess(img_path):
-    img = tf.keras.preprocessing.image.load_img(
-        img_path,
-        target_size=(224, 224)   # 🔥 FIXED
-    )
-    img = tf.keras.preprocessing.image.img_to_array(img)
-    img = img / 255.0
+    img = Image.open(img_path).convert("RGB")
+    img = img.resize((224, 224))  # MUST match model
+
+    img = np.array(img) / 255.0   # match training
     img = np.expand_dims(img, axis=0)
+
     return img
+
 
 # ==============================
 # VIEW
@@ -57,7 +66,6 @@ def preprocess(img_path):
 def pest_prediction(request):
 
     if request.method == "POST":
-
         try:
             # ==============================
             # USER INPUT
@@ -74,54 +82,65 @@ def pest_prediction(request):
                 })
 
             # ==============================
-            # SAVE IMAGE (FIXED)
+            # SAVE IMAGE
             # ==============================
             record = PestClass(
                 name=name,
                 district=district,
                 location=location,
                 plant_type=plant_type,
-                image=image_file   # ✅ direct assign
+                image=image_file
             )
-            record.save()  # 🔥 MUST SAVE FIRST
+            record.save()
 
             img_path = record.image.path
-
-            # Debug
             print("Image Path:", img_path)
 
             # ==============================
-            # PREDICTION
+            # LOAD MODEL + CLASSES
             # ==============================
-            model       = get_model()
+            model = get_model()
             class_names = get_class_names()
 
-            input_img   = preprocess(img_path)
-
-            prediction  = np.squeeze(model.predict(input_img))
-            index       = int(np.argmax(prediction))
-            confidence  = float(np.max(prediction)) * 100
-
-            predicted_class = class_names[index] if index < len(class_names) else "Unknown"
+            # ==============================
+            # PREPROCESS
+            # ==============================
+            input_img = preprocess(img_path)
 
             # ==============================
-            # CONFIDENCE FILTER
+            # PREDICT
             # ==============================
-            if confidence < 80:
-                predicted_class = "Invalid Image / Not a Plant"
-                message = f"❌ Sorry {name}, please upload a valid plant leaf image."
-            else:
-                message = f"🌿 Hello {name}, your plant disease is detected successfully."
+            preds = model.predict(input_img)[0]
+
+            index = int(np.argmax(preds))
+            confidence = float(preds[index]) * 100
+
+            predicted_class = (
+                class_names[index] if index < len(class_names) else "Unknown"
+            )
+
+            # ==============================
+            # DEBUG (VERY IMPORTANT)
+            # ==============================
+            print("Raw Predictions:", preds)
+            print("Predicted Index:", index)
+            print("Predicted Class:", predicted_class)
+            print("Confidence:", confidence)
+
+            # ==============================
+            # MESSAGE
+            # ==============================
+            message = f"🕷 Hello {name}, your pest image is detected."
 
             # ==============================
             # SAVE RESULT
             # ==============================
             record.predicted_disease = predicted_class
-            record.confidence        = round(confidence, 2)
+            record.confidence = round(confidence, 2)
             record.save()
 
             # ==============================
-            # RESULT PAGE
+            # RESPONSE
             # ==============================
             return render(request, "pest_result.html", {
                 "name": name,
@@ -135,7 +154,7 @@ def pest_prediction(request):
             })
 
         except Exception as e:
-            print(traceback.format_exc())  # 🔥 full error log
+            print(traceback.format_exc())
             return render(request, "pest_form.html", {
                 "error": f"Prediction failed: {str(e)}"
             })

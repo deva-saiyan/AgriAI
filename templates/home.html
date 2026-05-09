@@ -1,71 +1,54 @@
-{% extends 'index.html' %}
-{% load static %}
+{% extends 'index.html' %} {% load static %} {% block content %}
 
-{% block content %}
-
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 
 <!-- HERO -->
 
 <section class="hero-section d-flex align-items-center">
+  ```
+  <div class="container text-center text-white">
+    <h1 class="fw-bold display-4 animate-title">🌿 Agrimind AI</h1>
 
-    ```
-    <div class="container text-center text-white">
+    <p class="lead mt-3 animate-subtitle">
+      Smart Farming powered by Artificial Intelligence – Predict crops, detect
+      pests, and analyze soil efficiently.
+    </p>
 
-        <h1 class="fw-bold display-4 animate-title">
-            🌿 Agrimind AI
-        </h1>
+    <!-- NOT LOGGED IN -->
+    {% if not user.is_authenticated %}
+    <div class="mt-4">
+      <a
+        href="{% url 'Former:register' %}"
+        class="btn btn-outline-light btn-lg mx-2"
+      >
+        Register
+      </a>
 
-        <p class="lead mt-3 animate-subtitle">
-            Smart Farming powered by Artificial Intelligence – Predict crops, detect pests, and analyze soil
-            efficiently.
-        </p>
-
-        <!-- NOT LOGGED IN -->
-        {% if not user.is_authenticated %}
-        <div class="mt-4">
-            <a href="{% url 'Former:register' %}" class="btn btn-outline-light btn-lg mx-2">
-                Register
-            </a>
-
-            <a href="{% url 'Former:login' %}" class="btn btn-warning btn-lg mx-2">
-                Login
-            </a>
-        </div>
-
-        <!-- ADMIN -->
-        {% elif user.is_staff %}
-        <div class="mt-4">
-            <a href="#" class="btn btn-success btn-lg mx-2">
-                Manage App
-            </a>
-
-
-
-
-            <a href="{% url 'Former:users' %}" class="btn btn-success btn-lg mx-2">
-                Manage Users
-            </a>
-
-
-
-
-
-
-        </div>
-
-        <!-- NORMAL USER -->
-        {% else %}
-        <div class="mt-4">
-            <a href="#features" class="btn btn-success btn-lg mx-2 smooth-btn">
-                Start Prediction
-            </a>
-        </div>
-        {% endif %}
-
+      <a href="{% url 'Former:login' %}" class="btn btn-warning btn-lg mx-2">
+        Login
+      </a>
     </div>
-    ```
 
+    <!-- ADMIN -->
+    {% elif user.is_staff %}
+    <div class="mt-4">
+      <a href="#" class="btn btn-success btn-lg mx-2"> Manage App </a>
+
+      <a href="{% url 'Former:users' %}" class="btn btn-success btn-lg mx-2">
+        Manage Users
+      </a>
+    </div>
+
+    <!-- NORMAL USER -->
+    {% else %}
+    <div class="mt-4">
+      <a href="#features" class="btn btn-success btn-lg mx-2 smooth-btn">
+        Start Prediction
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  ```
 </section>
 
 <!-- FEATURES -->
@@ -73,71 +56,106 @@
 {% if user.is_authenticated %}
 
 <section id="features" class="features-section py-5">
+  ```
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 title-glow">
+      🌱 AI Agriculture Features
+    </h2>
 
-    ```
-    <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card card-green text-white">
+          <a
+            href="{% url 'Model:crop_prediction' %}"
+            class="text-decoration-none text-white d-block"
+          >
+            <div class="card-body text-center">
+              <i class="fa fa-seedling fa-2x"></i>
 
-        <h2 class="text-center fw-bold mb-5 title-glow">
-            🌱 AI Agriculture Features
-        </h2>
+              <h5 class="mt-3">Crop Prediction</h5>
 
-        <div class="row g-4">
-
-            <div class="col-md-4">
-
-                <div class="card feature-card card-green text-white">
-
-                    <a href="{% url 'Model:crop_prediction' %}" class="text-decoration-none text-white d-block">
-
-                        <div class="card-body text-center">
-
-                            <i class="fa fa-seedling fa-2x"></i>
-
-                            <h5 class="mt-3">Crop Prediction</h5>
-
-                            <p>Get best crop suggestions based on soil data.</p>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
+              <p>Get best crop suggestions based on soil data.</p>
             </div>
-
-            <div class="col-md-4">
-                <div class="card feature-card card-red text-white">
-                    <a href="" class="text-decoration-none text-white d-block">
-                        <div class="card-body text-center">
-                            <i class="fa fa-bug fa-2x"></i>
-                            <h5 class="mt-3">Pest Detection</h5>
-                            <p>Detect plant diseases using deep learning models.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card feature-card card-blue text-white">
-                    <a href="{% url 'Leaf:leaf_prediction' %}" class="text-decoration-none text-white d-block">
-
-                        <div class="card-body text-center">
-                            <i class="fa fa-cloud-sun fa-2x"></i>
-                            <h5 class="mt-3">Plant Leaf Analysis</h5>
-                            <p>Smart Leaf insights for farming decisions.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
+          </a>
         </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card feature-card card-red text-white">
+          <a
+            href="{% url 'Pest:pest_prediction' %}"
+            class="text-decoration-none text-white d-block"
+          >
+            <div class="card-body text-center">
+              <i class="fa fa-bug fa-2x"></i>
+              <h5 class="mt-3">Pest Detection</h5>
+              <p>Detect plant diseases using deep learning models.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card feature-card card-blue text-white">
+          <a
+            href="{% url 'Leaf:leaf_prediction' %}"
+            class="text-decoration-none text-white d-block"
+          >
+            <div class="card-body text-center">
+              <i class="fa fa-cloud-sun fa-2x"></i>
+              <h5 class="mt-3">Plant Leaf Analysis</h5>
+              <p>Smart Leaf insights for farming decisions.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card feature-card card-yellow text-white">
+          <a href="" class="text-decoration-none text-white d-block">
+            <div class="card-body text-center">
+              <i class="fa fa-seedling fa-2x"></i>
+
+              <h5 class="mt-3">Govt Schemes</h5>
+
+              <p>Get Best Govt Scheme suggestions based Environment .</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card feature-card card-orange text-white">
+          <a href="" class="text-decoration-none text-white d-block">
+            <div class="card-body text-center">
+              <i class="fa fa-seedling fa-2x"></i>
+
+              <h5 class="mt-3">Market Price</h5>
+
+              <p>Get Best Market Prize crop suggestions Market Value.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card feature-card card-black text-white">
+          <a href="" class="text-decoration-none text-white d-block">
+            <div class="card-body text-center">
+              <i class="fa fa-seedling fa-2x"></i>
+
+              <h5 class="mt-3">LLM </h5>
+
+              <p>Get best crop suggestions .</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
 
     </div>
-    ```
+  </div>
 
+  ```
 </section>
-{% endif %}
-
-{% include 'footer.html' %}
-
-{% endblock %}
+{% endif %} {% include 'footer.html' %} {% endblock %}

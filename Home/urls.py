@@ -12,7 +12,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
-        
+    path('crop_details/', views.crop_details, name='crop_details'),
+    path('leaf_details/', views.leaf_details, name='leaf_details'),
+    path('pest_details/', views.pest_details, name='pest_details'),
 ]
 
 

@@ -1,0 +1,483 @@
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #071426, #0f172a, #111827);
+    overflow-x: hidden;
+    color: white;
+}
+
+/* ================= WRAPPER ================= */
+
+.leaf-wrapper {
+    padding: 20px 15px 100px;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+    min-height: 95vh;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        linear-gradient(135deg,
+            #22c55e,
+            #06b6d4,
+            #3b82f6,
+            #8b5cf6);
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at top left,
+            rgba(255, 255, 255, 0.15),
+            transparent 40%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: fadeDown 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e2e8f0;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-text {
+    max-width: 850px;
+    margin: auto;
+    line-height: 2;
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    animation: fadeUp 1.4s ease;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 40px;
+    text-decoration: none;
+    background: white;
+    color: #2563eb;
+    font-weight: 700;
+    transition: 0.4s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.second-btn {
+    background: #111827;
+    color: white;
+}
+
+/* ================= CONTENT SECTION ================= */
+
+.content-section {
+    margin-top: 90px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.section-title h1 {
+    margin-top: 10px;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card,
+.problem-card,
+.algo-card,
+.feature-box,
+.journal-card,
+.dataset-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    padding: 35px;
+    transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.glass-card:hover,
+.problem-card:hover,
+.algo-card:hover,
+.feature-box:hover,
+.journal-card:hover,
+.dataset-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(34, 197, 94, 0.25);
+}
+
+/* ================= CARD HEADER ================= */
+
+.card-header-custom {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-header-custom i {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e, #06b6d4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+    margin-right: 18px;
+}
+
+.card-header-custom h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.glass-card p,
+.problem-card p,
+.algo-card p {
+    line-height: 2;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+.glass-card ul {
+    padding-left: 20px;
+}
+
+.glass-card ul li {
+    margin-bottom: 14px;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+/* ================= PROBLEM ================= */
+
+.problem-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.25),
+            rgba(249, 115, 22, 0.25));
+}
+
+.problem-card i {
+    font-size: 70px;
+    color: #f97316;
+}
+
+/* ================= DATASET ================= */
+
+.dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.dataset-box {
+    text-align: center;
+}
+
+.dataset-box h2 {
+    font-size: 3rem;
+    color: #22c55e;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.dataset-box p {
+    color: #cbd5e1;
+}
+
+/* ================= ALGORITHM ================= */
+
+.algo-card {
+    text-align: center;
+}
+
+.accuracy-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto auto 25px;
+
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+}
+
+.cnn {
+    background: linear-gradient(135deg, #f97316, #fb7185);
+}
+
+.mobile {
+    background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+.fusion {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.algo-card h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ================= FEATURES ================= */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.feature-box {
+    text-align: center;
+}
+
+.feature-box i {
+    font-size: 55px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+.feature-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ================= JOURNAL ================= */
+
+.journal-card h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    font-size: 2rem;
+}
+
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.journal-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.journal-box:hover {
+    transform: scale(1.05);
+}
+
+.journal-box i {
+    font-size: 45px;
+    margin-bottom: 18px;
+    color: #22c55e;
+}
+
+.journal-box h3 {
+    margin-bottom: 10px;
+}
+
+.journal-box p {
+    color: #cbd5e1;
+}
+
+/* ================= ANIMATION ================= */
+
+.animate-card {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: 1s ease;
+}
+
+.animate-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px) {
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-title h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    .hero-section {
+        min-height: 80vh;
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    .card-header-custom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-header-custom i {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .problem-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .journal-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:576px) {
+
+    .glass-card,
+    .problem-card,
+    .algo-card,
+    .feature-box,
+    .journal-card,
+    .dataset-box {
+        padding: 25px;
+    }
+
+    .accuracy-circle {
+        width: 110px;
+        height: 110px;
+        font-size: 24px;
+    }
+
+    .dataset-box h2 {
+        font-size: 2.2rem;
+    }
+}

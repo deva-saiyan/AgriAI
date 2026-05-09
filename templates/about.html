@@ -3,13 +3,97 @@
 
 {% block content %}
 
-<head>
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-</head>
+<!-- External CSS -->
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 
-<body>
-    <h1 class="text-primary">about</h1>
-</body>
+<section class="about-section container">
 
+    <h1 class="main-title">AgriMind AI</h1>
+
+    <p class="sub-title">
+        Smart Agriculture System powered by Artificial Intelligence for helping farmers
+        with crop recommendation, plant disease detection and pest classification.
+    </p>
+
+    <div class="row g-4">
+
+        <!-- Crop Suggestion -->
+        <div class="col-lg-4 col-md-6">
+            <div class="feature-card card-animation">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h3 class="feature-title">Crop Suggestion</h3>
+
+                <p class="feature-text">
+                    Predict the best suitable crop based on soil nutrients,
+                    rainfall, temperature and environmental conditions.
+                </p>
+
+                <a href="{% url 'Home:crop_details' %}" class="feature-btn">
+                    Explore
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Leaf Disease Detection -->
+        <div class="col-lg-4 col-md-6">
+            <div class="feature-card card-animation">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h3 class="feature-title">Leaf Disease Detection</h3>
+
+                <p class="feature-text">
+                    Upload leaf images and detect diseases instantly
+                    using AI and Deep Learning technology.
+                </p>
+
+                <a href="{% url 'Home:leaf_details' %}" class="feature-btn_2">
+                    Explore
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Pest Classification -->
+        <div class="col-lg-4 col-md-6">
+            <div class="feature-card card-animation">
+
+                <div class="icon-box">
+                    <i class="fa-solid fa-bug"></i>
+                </div>
+
+                <h3 class="feature-title">Pest Classification</h3>
+
+                <p class="feature-text">
+                    Identify agricultural pests accurately and
+                    protect crops with intelligent AI classification.
+                </p>
+
+                <a href="" class="feature-btn_3">
+                    Explore
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- External JS -->
+<script src="{% static 'js/about.js' %}"></script>
+
+{% include 'footer.html' %}
 
 {% endblock %}

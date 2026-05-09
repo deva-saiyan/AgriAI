@@ -3,8 +3,243 @@
 
 {% block content %}
 
-<body>
-    <h1 class="text-danger">Contact</h1>
-</body>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<section class="contact-wrapper container-fluid">
+
+    <!-- HERO -->
+
+    <section class="contact-hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                Meet Our Team
+            </h1>
+
+            <p class="hero-subtitle">
+                Passionate Developers Behind AgriMind AI Smart Agriculture System
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- TEAM SECTION -->
+
+    <section class="team-section">
+
+        <div class="section-title">
+
+            <span>Our Team Members</span>
+
+            <h1>AgriMind AI Team</h1>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- PERSON 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card animate-card">
+
+                    <div class="card-bg"></div>
+
+                    <div class="profile-img">
+
+                        <img src="{% static 'img/narmaths.jpg' %}" alt="Narmatha">
+
+                    </div>
+
+                    <h2>Narmatha</h2>
+
+                    <h4>Crop Suggestion Module</h4>
+
+                    <p>
+                        AI and Machine Learning enthusiast working on
+                        intelligent crop recommendation systems for smart farming.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PERSON 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card animate-card">
+
+                    <div class="card-bg"></div>
+
+                    <div class="profile-img">
+
+                        <img src="{% static 'img/praba.jpeg' %}" alt="Praba">
+
+                    </div>
+
+                    <h2>Praba</h2>
+
+                    <h4>Frontend Developer</h4>
+
+                    <p>
+                        Creative frontend developer focused on building
+                        modern responsive UI designs and user experiences.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PERSON 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card animate-card">
+
+                    <div class="card-bg"></div>
+
+                    <div class="profile-img">
+
+                        <img src="{% static 'img/sathish.jpg' %}" alt="Sathish">
+
+                    </div>
+
+                    <h2>Sathish</h2>
+
+                    <h4>Pest Classification</h4>
+
+                    <p>
+                        Focused on pest detection and classification using
+                        Deep Learning and Computer Vision technologies.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PERSON 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card animate-card">
+
+                    <div class="card-bg"></div>
+
+                    <div class="profile-img">
+
+                        <img src="{% static 'img/deva.jpg' %}" alt="Deva">
+
+                    </div>
+
+                    <h2>Deva</h2>
+
+                    <h4>Full Stack AI Developer</h4>
+
+                    <p>
+                        Python Full Stack Developer and AI Engineer building
+                        smart agriculture solutions using Django and Deep Learning.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+{% include 'footer.html' %}
+
+<script src="{% static 'js/contact.js' %}"></script>
 
 {% endblock %}

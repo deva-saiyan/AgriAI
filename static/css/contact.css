@@ -1,0 +1,388 @@
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #071426, #0f172a, #111827);
+    overflow-x: hidden;
+    color: white;
+}
+
+/* ================= WRAPPER ================= */
+
+.contact-wrapper {
+    padding: 20px 15px 100px;
+}
+
+/* ================= HERO SECTION ================= */
+
+.contact-hero {
+    min-height: 70vh;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 80px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        linear-gradient(135deg,
+            #22c55e,
+            #06b6d4,
+            #3b82f6,
+            #8b5cf6,
+            #ec4899);
+}
+
+/* HERO OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(255, 255, 255, 0.15),
+            transparent 40%);
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: fadeDown 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #e2e8f0;
+    animation: fadeUp 1.3s ease;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.section-title h1 {
+    margin-top: 10px;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+/* ================= TEAM SECTION ================= */
+
+.team-section {
+    margin-top: 50px;
+}
+
+/* ================= TEAM CARD ================= */
+
+.team-card {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    transition: 0.5s ease;
+
+    height: 100%;
+}
+
+/* HOVER EFFECT */
+
+.team-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(56, 189, 248, 0.25);
+}
+
+/* BACKGROUND EFFECT */
+
+.card-bg {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: linear-gradient(135deg,
+            rgba(34, 197, 94, 0.3),
+            rgba(59, 130, 246, 0.3));
+
+    border-radius: 50%;
+
+    top: -120px;
+    right: -120px;
+}
+
+/* ================= PROFILE IMAGE ================= */
+
+.profile-img {
+    position: relative;
+    z-index: 2;
+
+    width: 150px;
+    height: 150px;
+
+    margin: auto auto 25px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid rgba(255, 255, 255, 0.2);
+
+    transition: 0.4s ease;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* IMAGE HOVER */
+
+.team-card:hover .profile-img {
+    transform: scale(1.08);
+}
+
+/* ================= TEXT ================= */
+
+.team-card h2 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.team-card h4 {
+    position: relative;
+    z-index: 2;
+
+    color: #38bdf8;
+
+    margin-bottom: 18px;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.team-card p {
+    position: relative;
+    z-index: 2;
+
+    line-height: 1.9;
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-icons {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 18px;
+
+    transition: 0.4s ease;
+}
+
+/* SOCIAL HOVER */
+
+.social-icons a:hover {
+    transform: translateY(-8px) scale(1.1);
+}
+
+/* INDIVIDUAL COLORS */
+
+.social-icons a:nth-child(1):hover {
+    background: #25D366;
+}
+
+.social-icons a:nth-child(2):hover {
+    background: #E4405F;
+}
+
+.social-icons a:nth-child(3):hover {
+    background: #FF0000;
+}
+
+.social-icons a:nth-child(4):hover {
+    background: #24292e;
+}
+
+/* ================= ANIMATION ================= */
+
+.animate-card {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: 1s ease;
+}
+
+.animate-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px) {
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-title h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .contact-hero {
+        min-height: 50vh;
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    .team-card {
+        padding: 30px 20px;
+    }
+
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .contact-wrapper {
+        padding: 15px 10px 80px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .team-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+}

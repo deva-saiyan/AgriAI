@@ -1,0 +1,605 @@
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* ================= WRAPPER ================= */
+
+.project-wrapper {
+    padding: 20px 15px 100px;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+    min-height: 95vh;
+    background: linear-gradient(135deg,
+            #06b6d4,
+            #3b82f6,
+            #8b5cf6,
+            #ec4899);
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 40px;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 5.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    animation: fadeDown 1s ease;
+}
+
+.hero-tagline {
+    font-size: 2rem;
+    color: #f8fafc;
+    margin-bottom: 20px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-subtitle {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #f1f5f9;
+    animation: fadeUp 1.4s ease;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #2563eb;
+    background: white;
+    transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.hero-btn i {
+    margin-right: 10px;
+}
+
+.hero-btn:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.second-btn {
+    background: #111827;
+    color: white;
+}
+
+/* ================= SECTION ================= */
+
+.content-section {
+    margin-top: 90px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    color: #38bdf8;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.section-heading h1 {
+    font-size: 3rem;
+    margin-top: 10px;
+    font-weight: 800;
+    color: white;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card,
+.problem-card,
+.dataset-card,
+.algo-card,
+.chart-card,
+.journal-card,
+.feature-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    padding: 35px;
+    transition: 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.glass-card:hover,
+.problem-card:hover,
+.dataset-card:hover,
+.algo-card:hover,
+.chart-card:hover,
+.journal-card:hover,
+.feature-box:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(56, 189, 248, 0.25);
+}
+
+/* ================= CARD TOP ================= */
+
+.card-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.icon-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon-circle i {
+    font-size: 30px;
+    color: white;
+}
+
+.card-top h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.glass-card p,
+.problem-card p,
+.algo-card p {
+    line-height: 2;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+.custom-list {
+    padding-left: 20px;
+}
+
+.custom-list li {
+    margin-bottom: 14px;
+    color: #e2e8f0;
+    line-height: 1.8;
+}
+
+/* ================= PROBLEM ================= */
+
+.problem-card {
+    background: linear-gradient(135deg,
+            rgba(239, 68, 68, 0.25),
+            rgba(249, 115, 22, 0.25));
+}
+
+.problem-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.problem-icon i {
+    font-size: 65px;
+    color: #f97316;
+}
+
+/* ================= SYSTEM ================= */
+
+.system-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.system-header i {
+    font-size: 40px;
+    margin-right: 18px;
+}
+
+.system-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.red-gradient {
+    border-left: 7px solid #ef4444;
+}
+
+.green-gradient {
+    border-left: 7px solid #22c55e;
+}
+
+.blue-gradient {
+    border-left: 7px solid #38bdf8;
+}
+
+.purple-gradient {
+    border-left: 7px solid #8b5cf6;
+}
+
+/* ================= DATASET ================= */
+
+.dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.dataset-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.dataset-box:hover {
+    transform: scale(1.05);
+}
+
+.dataset-box h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.dataset-box p {
+    color: #e2e8f0;
+}
+
+/* ================= ALGORITHMS ================= */
+
+.algo-card {
+    text-align: center;
+}
+
+.accuracy-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: auto auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 10px 35px rgba(255, 255, 255, 0.15);
+}
+
+.accuracy-one {
+    background: linear-gradient(135deg, #f97316, #fb7185);
+}
+
+.accuracy-two {
+    background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+.accuracy-three {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.algo-card h2 {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ================= CHART ================= */
+
+.bar-chart {
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.chart-item {
+    text-align: center;
+    width: 200px;
+}
+
+.chart-item h3 {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.chart-item p {
+    color: #cbd5e1;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+    animation: growBar 2s ease;
+}
+
+.ann-bar {
+    height: 280px;
+    background: linear-gradient(180deg, #f97316, #fb7185);
+}
+
+.gb-bar {
+    height: 320px;
+    background: linear-gradient(180deg, #22c55e, #06b6d4);
+}
+
+.fusion-bar {
+    height: 320px;
+    background: linear-gradient(180deg, #8b5cf6, #ec4899);
+}
+
+/* ================= FEATURES ================= */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 40px 25px;
+}
+
+.feature-box i {
+    font-size: 55px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+.feature-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ================= NOVELTY ================= */
+
+.novelty-card {
+    background: linear-gradient(135deg,
+            rgba(56, 189, 248, 0.2),
+            rgba(139, 92, 246, 0.2));
+}
+
+/* ================= JOURNAL ================= */
+
+.journal-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.journal-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.journal-box:hover {
+    transform: scale(1.05);
+}
+
+.journal-box i {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #22c55e;
+}
+
+.journal-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.journal-box p {
+    color: #cbd5e1;
+}
+
+/* ================= ANIMATION ================= */
+
+.animate-card {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: 1s ease;
+}
+
+.animate-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes growBar {
+    from {
+        height: 0;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px) {
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.5rem;
+    }
+
+    .section-heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .problem-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media(max-width:768px) {
+
+    .hero-section {
+        min-height: 80vh;
+        padding: 30px 20px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .section-heading h1 {
+        font-size: 2rem;
+    }
+
+    .card-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon-circle {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .bar-chart {
+        gap: 15px;
+    }
+
+    .chart-item {
+        width: 90px;
+    }
+
+    .chart-bar {
+        width: 70px;
+        margin: auto;
+    }
+
+    .journal-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:576px) {
+
+    .project-wrapper {
+        padding: 15px 10px 80px;
+    }
+
+    .glass-card,
+    .problem-card,
+    .dataset-card,
+    .algo-card,
+    .chart-card,
+    .journal-card,
+    .feature-box {
+        padding: 25px;
+    }
+
+    .accuracy-circle {
+        width: 110px;
+        height: 110px;
+        font-size: 24px;
+    }
+
+    .dataset-box h2 {
+        font-size: 2.2rem;
+    }
+}

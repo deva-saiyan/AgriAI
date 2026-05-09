@@ -13,7 +13,7 @@
 
       <div class="card shadow-lg p-4 text-center">
 
-        <h2 class="text-success">🌿 Prediction Result</h2>
+        <h2 class="text-success">🦋 Prediction Result</h2>
 
         <!-- MESSAGE -->
         <div class="alert alert-info mt-3">
@@ -42,7 +42,7 @@
         <!-- BUTTONS -->
         <div class="mt-4">
 
-          <a href="{% url 'Leaf:leaf_prediction' %}" class="btn btn-outline-success">
+          <a href="{% url 'Pest:pest_prediction' %}" class="btn btn-outline-success">
             🔁 Try Again
           </a>
 
@@ -60,4 +60,5 @@
 
 </div>
 
+{% include 'footer.html' %}
 {% endblock %}

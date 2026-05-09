@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'AgriMind_AI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'agrimind',
-        'USER': 'root',
-        'PASSWORD': 'deva',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

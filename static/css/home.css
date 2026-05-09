@@ -54,6 +54,19 @@ html {
   background: linear-gradient(135deg, #396afc, #2948ff);
 }
 
+
+.card-yellow {
+  background: linear-gradient(135deg, #a1ec27, #c6b605);
+}
+
+.card-orange {
+  background: linear-gradient(135deg, #f28039, #159cc1);
+}
+
+.card-black {
+  background: linear-gradient(135deg, #e318dc, #11a2bc);
+}
+
 /* Hover effect */
 .feature-card:hover {
   transform: translateY(-10px) scale(1.03);
